@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Art | Клешня Нигилиста — Live Demo</title>
+    <style>
+        body { margin:0; background:#0a0a0a; overflow:hidden; font-family: 'Satoshi', sans-serif; }
+        canvas { display:block; }
+        #info {
+            position: absolute; top: 20px; left: 20px; color: #8B0000; font-size: 18px;
+            background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">CG Art • Technical 3D Artist • Gaussian Splatting + UE5 pipeline</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Пример вашей клешни (можно заменить на реальный GLB позже)
+        const geometry = new THREE.ConeGeometry(0.8, 3, 4); // форма клешни
+        const material = new THREE.MeshPhongMaterial({
+            color: 0x8B0000,
+            shininess: 80,
+            specular: 0xffffff
+        });
+        const claw = new THREE.Mesh(geometry, material);
+        claw.rotation.x = Math.PI / 2;
+        scene.add(claw);
+
+        // Освещение
+        const light = new THREE.DirectionalLight(0xffffff, 1.2);
+        light.position.set(5, 10, 7);
+        scene.add(light);
+        scene.add(new THREE.AmbientLight(0x404040));
+
+        camera.position.set(0, 2, 6);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            claw.rotation.y += 0.008;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Адаптивность
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        console.log("%c✅ CG Art прототип запущен. Это уже готовый интерактивный сайт для портфолио.", "color:#8B0000; font-size:16px");
+    </script>
+</body>
+</html>
