@@ -1,63 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CG Art | Клешня Нигилиста — Live Demo</title>
-    <style>
-        body { margin:0; background:#0a0a0a; overflow:hidden; font-family: 'Satoshi', sans-serif; }
-        canvas { display:block; }
-        #info {
-            position: absolute; top: 20px; left: 20px; color: #8B0000; font-size: 18px;
-            background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 8px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CG Art | Михаил Михайлов — Junior Programmer / Technical 3D Artist</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
+    .header { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #1a1a1a, #2d2d2d); }
+    .header h1 { font-size: 2.8rem; margin: 0; }
+    .header p { font-size: 1.3rem; opacity: 0.8; }
+    .projects { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+    .card { background: #1f1f1f; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { width: 100%; height: 240px; object-fit: cover; }
+    .card-content { padding: 20px; }
+    .card h3 { margin: 0 0 10px; font-size: 1.4rem; }
+    .card p { opacity: 0.85; line-height: 1.5; }
+    .card a { color: #00bfff; text-decoration: none; font-weight: 500; }
+  </style>
 </head>
 <body>
-    <div id="info">CG Art • Technical 3D Artist • Gaussian Splatting + UE5 pipeline</div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({antialias: true});
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
 
-        // Пример вашей клешни (можно заменить на реальный GLB позже)
-        const geometry = new THREE.ConeGeometry(0.8, 3, 4); // форма клешни
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x8B0000,
-            shininess: 80,
-            specular: 0xffffff
-        });
-        const claw = new THREE.Mesh(geometry, material);
-        claw.rotation.x = Math.PI / 2;
-        scene.add(claw);
+  <div class="header">
+    <h1>CG Art</h1>
+    <p>Junior Programmer & Technical 3D Artist</p>
+    <p>Python • Blender • ComfyUI • Gaussian Splatting • MCP-агенты</p>
+  </div>
 
-        // Освещение
-        const light = new THREE.DirectionalLight(0xffffff, 1.2);
-        light.position.set(5, 10, 7);
-        scene.add(light);
-        scene.add(new THREE.AmbientLight(0x404040));
+  <div class="projects">
 
-        camera.position.set(0, 2, 6);
+    <!-- Проект 1 -->
+    <div class="card">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/246223463.jpg" alt="Modern House">
+      <div class="card-content">
+        <h3>Modern House</h3>
+        <p>Реалистичная визуализация современного частного дома. Полная проработка композиции, освещения и материалов для презентации клиенту.</p>
+        <a href="https://www.behance.net/portfolio/editor?project_id=246223463" target="_blank">Открыть на Behance →</a>
+      </div>
+    </div>
 
-        function animate() {
-            requestAnimationFrame(animate);
-            claw.rotation.y += 0.008;
-            renderer.render(scene, camera);
-        }
-        animate();
+    <!-- Проект 2 -->
+    <div class="card">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/116562841.jpg" alt="Кафе">
+      <div class="card-content">
+        <h3>Концепция дизайна кафе</h3>
+        <p>Посадочная зона в современном стиле. Полная концептуальная проработка интерьера и атмосферы.</p>
+        <a href="https://www.behance.net/gallery/116562841/conceptual-design-of-the-cafes-seating-area" target="_blank">Открыть на Behance →</a>
+      </div>
+    </div>
 
-        // Адаптивность
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+    <!-- Проект 3 -->
+    <div class="card">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/203294033.jpg" alt="Экстерьер">
+      <div class="card-content">
+        <h3>Визуализация экстерьеров 1.0</h3>
+        <p>Курсовая работа. Постобработка в Stable Diffusion. Реалистичная визуализация экстерьера.</p>
+        <a href="https://www.behance.net/gallery/203294033/The-work-of-my-student-Mikhail-Mikhailov" target="_blank">Открыть на Behance →</a>
+      </div>
+    </div>
 
-        console.log("%c✅ CG Art прототип запущен. Это уже готовый интерактивный сайт для портфолио.", "color:#8B0000; font-size:16px");
-    </script>
+  </div>
+
 </body>
 </html>
