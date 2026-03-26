@@ -1,125 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CG Art | Михаил Михайлов — Junior Programmer & Technical 3D Artist</title>
-  <style>
-    body { 
-      margin: 0; 
-      font-family: 'Segoe UI', system-ui, sans-serif; 
-      background: #0a0a0a; 
-      color: #fff; 
-    }
-    .header { 
-      text-align: center; 
-      padding: 80px 20px 50px; 
-      background: linear-gradient(135deg, #1a1a1a, #2d2d2d); 
-    }
-    .header h1 { 
-      font-size: 3rem; 
-      margin: 0 0 10px; 
-      letter-spacing: -2px;
-    }
-    .header p { 
-      font-size: 1.35rem; 
-      opacity: 0.85; 
-      margin: 8px 0;
-    }
-    .projects { 
-      max-width: 1280px; 
-      margin: 0 auto; 
-      padding: 40px 20px; 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
-      gap: 30px; 
-    }
-    .card { 
-      background: #1f1f1f; 
-      border-radius: 16px; 
-      overflow: hidden; 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
-      transition: all 0.4s ease; 
-    }
-    .card:hover { 
-      transform: translateY(-12px); 
-      box-shadow: 0 25px 50px rgba(0,0,0,0.6); 
-    }
-    .card img { 
-      width: 100%; 
-      height: 260px; 
-      object-fit: cover; 
-      transition: transform 0.4s ease; 
-    }
-    .card:hover img { 
-      transform: scale(1.05); 
-    }
-    .card-content { 
-      padding: 24px; 
-    }
-    .card h3 { 
-      margin: 0 0 12px; 
-      font-size: 1.45rem; 
-    }
-    .card p { 
-      opacity: 0.85; 
-      line-height: 1.55; 
-      margin-bottom: 18px; 
-    }
-    .card a { 
-      color: #00bfff; 
-      text-decoration: none; 
-      font-weight: 600; 
-      display: inline-flex; 
-      align-items: center; 
-      gap: 6px; 
-    }
-    .card a:hover { 
-      color: #00d4ff; 
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Art | Junior Programmer & Technical 3D Artist</title>
+    <style>
+        body { margin:0; background:#0a0a0a; color:#e0e0e0; font-family: system-ui, sans-serif; }
+        .header { text-align:center; padding:60px 20px 40px; background: linear-gradient(to bottom, #1a1a1a, #0a0a0a); }
+        h1 { font-size: 3.2rem; margin:0; color:#8B0000; }
+        .subtitle { font-size:1.1rem; color:#aaa; margin-top:8px; }
+        .projects { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; padding:40px 20px; max-width:1400px; margin:0 auto; }
+        .card { background:#1f1f1f; border-radius:12px; overflow:hidden; width:380px; transition:0.3s; }
+        .card:hover { transform:translateY(-8px); box-shadow:0 20px 30px rgba(139,0,0,0.3); }
+        .card img { width:100%; height:240px; object-fit:cover; }
+        .card-body { padding:20px; }
+        .card h3 { margin:0 0 12px; color:#fff; font-size:1.4rem; }
+        .card p { color:#aaa; line-height:1.5; }
+        .link { color:#8B0000; text-decoration:none; font-weight:600; margin-top:16px; display:inline-block; }
+    </style>
 </head>
 <body>
 
-  <div class="header">
+<div class="header">
     <h1>CG Art</h1>
-    <p>Junior Programmer & Technical 3D Artist</p>
-    <p>Python • Blender • ComfyUI • Gaussian Splatting • MCP-агенты</p>
-  </div>
+    <p class="subtitle">Junior Programmer & Technical 3D Artist<br>Python • Blender • ComfyUI • Gaussian Splatting • MCP-агенты</p>
+</div>
 
-  <div class="projects">
+<div class="projects">
 
     <!-- Проект 1 -->
     <div class="card">
-      <img src="https://i.imgur.com/wU9P8ss.jpg" alt="Modern House">
-      <div class="card-content">
-        <h3>Modern House</h3>
-        <p>Реалистичная визуализация современного частного дома. Полная проработка композиции, освещения и материалов для презентации клиенту.</p>
-        <a href="https://www.behance.net/mihaylov_91b2f6" target="_blank">Открыть на Behance →</a>
-      </div>
+        <img src="https://raw.githubusercontent.com/GS7770/cg-art-prototype/main/images/modern-house.png" alt="Modern House">
+        <div class="card-body">
+            <h3>Modern House</h3>
+            <p>Реалистичная визуализация современного частного дома. Полная проработка композиции, освещения и материалов.</p>
+            <a href="#" class="link">Открыть на Behance →</a>
+        </div>
     </div>
 
     <!-- Проект 2 -->
     <div class="card">
-      <img src="https://i.imgur.com/qFYqcSz.jpg" alt="Концепция дизайна кафе">
-      <div class="card-content">
-        <h3>Концепция дизайна кафе</h3>
-        <p>Посадочная зона в современном стиле. Полная концептуальная проработка интерьера и атмосферы.</p>
-        <a href="https://www.behance.net/mihaylov_91b2f6" target="_blank">Открыть на Behance →</a>
-      </div>
+        <img src="https://raw.githubusercontent.com/GS7770/cg-art-prototype/main/images/cafe-concept.jpg" alt="Концепция кафе">
+        <div class="card-body">
+            <h3>Концепция дизайна кафе</h3>
+            <p>Посадочная зона в современном стиле. Полная концептуальная проработка интерьера и атмосферы.</p>
+            <a href="#" class="link">Открыть на Behance →</a>
+        </div>
     </div>
 
     <!-- Проект 3 -->
     <div class="card">
-      <img src="https://i.imgur.com/iIjtfJT.jpg" alt="Визуализация экстерьеров 1.0">
-      <div class="card-content">
-        <h3>Визуализация экстерьеров 1.0</h3>
-        <p>Курсовая работа. Постобработка в Stable Diffusion. Реалистичная визуализация экстерьера.</p>
-        <a href="https://www.behance.net/mihaylov_91b2f6" target="_blank">Открыть на Behance →</a>
-      </div>
+        <img src="https://raw.githubusercontent.com/GS7770/cg-art-prototype/main/images/exteriors-visualization.jpg" alt="Визуализация экстерьеров">
+        <div class="card-body">
+            <h3>Визуализация экстерьеров 1.0</h3>
+            <p>Курсовая работа. Постобработка в Stable Diffusion. Реалистичная визуализация экстерьера.</p>
+            <a href="#" class="link">Открыть на Behance →</a>
+        </div>
     </div>
 
-  </div>
+</div>
 
 </body>
 </html>
